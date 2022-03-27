@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Cadastro de Moedas</string>
+
+    <string name="moedas">Moedas</string>
+    <string name="codigo">Código</string>
+    <string name="desc">Descrição</string>
+    <string name="abrev">Abreviatura</string>
+    <string name="cotaAtual">Cotação atual</string>
+
+    <string name="salvar">Salvar</string>
+    <string name="del">Deletar</string>
+    <string name="nova">Nova moeda</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="sim">Sim</string>
+    <string name="nao">Não</string>
+
+    <string name="alerta_excluir">Deseja excluir esta Moeda ?</string>
+    <string name="alerta_existente">Código já existente, carregar os dados para edição?</string>
+
+</resources>

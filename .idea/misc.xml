@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android/AndroidStudioProjects/CadastrodeMoedas/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.3205" />
+        <entry key="..\:/Android/AndroidStudioProjects/CadastrodeMoedas/app/src/main/res/drawable/ic_baseline_done_24.xml" value="0.3205" />
+        <entry key="..\:/Android/AndroidStudioProjects/CadastrodeMoedas/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1755" />
+        <entry key="..\:/Android/AndroidStudioProjects/CadastrodeMoedas/app/src/main/res/drawable/ic_outline_add_24.xml" value="0.2975" />
+        <entry key="..\:/Android/AndroidStudioProjects/CadastrodeMoedas/app/src/main/res/layout/activity_cadastro.xml" value="0.33" />
+        <entry key="..\:/Android/AndroidStudioProjects/CadastrodeMoedas/app/src/main/res/layout/activity_cadastro2.xml" value="0.2115036231884058" />
+        <entry key="..\:/Android/AndroidStudioProjects/CadastrodeMoedas/app/src/main/res/layout/activity_lista.xml" value="0.25" />
+        <entry key="..\:/Android/AndroidStudioProjects/CadastrodeMoedas/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Android/AndroidStudioProjects/CadastrodeMoedas/app/src/main/res/layout/divisor.xml" value="0.33" />
+        <entry key="..\:/Android/AndroidStudioProjects/CadastrodeMoedas/app/src/main/res/layout/moedas_adapter.xml" value="0.33" />
+        <entry key="..\:/Android/AndroidStudioProjects/CadastrodeMoedas/app/src/main/res/menu/menu_cadastro.xml" value="0.33" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
