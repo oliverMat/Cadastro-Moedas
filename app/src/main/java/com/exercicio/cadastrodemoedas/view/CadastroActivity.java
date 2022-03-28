@@ -58,22 +58,31 @@ public class CadastroActivity extends AppCompatActivity {
     }
 
     //salva ou atualiza a moeda
-    private void salvarUpdate(int codigo) {
+    private void salvarUpdate(String codigo) {
 
-        for (Moeda moeda : listarTudo) {//busca por codigo ja inseridos
-            if (moeda.getCodigo() == codigo && this.moeda == null) {
-                editarDados(moeda);
-                return; // achou a moeda, pode sair do método
+        if (!codigo.isEmpty()){
+
+            try {
+
+                int co = Integer.parseInt(codigo);
+
+                for (Moeda moeda : listarTudo) {//busca por codigo ja inseridos
+                    if (moeda.getCodigo() == co && this.moeda == null) {
+                        editarDados(moeda);
+                        return; // achou a moeda, pode sair do método
+                    }
+                }
+
+                viewModel.inserir(new Moeda(co, desc_et.getText().toString(), abrev_et.getText().toString(), verifiCotacaoNull()));
+
+                finish();
+            }catch (Exception e) {
+                e.printStackTrace();
+                Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
             }
-        }
 
-        try {
-            viewModel.inserir(new Moeda(codigo, desc_et.getText().toString(), abrev_et.getText().toString(), verifiCotacaoNull()));
-
-            finish();
-        }catch (Exception e) {
-            e.printStackTrace();
-            Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+        }else {
+            Toast.makeText(this, R.string.alerta_codigo, Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -126,7 +135,10 @@ public class CadastroActivity extends AppCompatActivity {
             abrev_et.setText(moeda.getAbreviatura());
             cot_et.setText(String.valueOf(moeda.getCotacao()));
             codigo_et.setEnabled(false);
-            menu.getItem(0).setVisible(true);
+
+            if(menu != null) {
+                menu.getItem(0).setVisible(true);
+            }
 
         }catch (Exception e) {
             e.printStackTrace();
@@ -166,7 +178,7 @@ public class CadastroActivity extends AppCompatActivity {
 
         if (id == R.id.salvar) {
 
-            salvarUpdate(Integer.parseInt(codigo_et.getText().toString()));
+            salvarUpdate(codigo_et.getText().toString());
 
             return true;
 

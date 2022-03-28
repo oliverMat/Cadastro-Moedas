@@ -24,7 +24,7 @@ public class MoedaViewModel extends AndroidViewModel {
 
     public void inserir(Moeda moeda) throws Exception {
 
-        if (!String.valueOf(moeda.getCodigo()).isEmpty() && !moeda.getDescricao().isEmpty()){
+        if (!moeda.getDescricao().isEmpty()){
 
             if (limitaString(moeda.getDescricao(),50) && limitaString(moeda.getAbreviatura(), 5)){
 
@@ -39,7 +39,7 @@ public class MoedaViewModel extends AndroidViewModel {
             }
 
         }else {
-            throw new Exception("Campos obrigatorios");
+            throw new Exception("Descricao obrigatorios");
         }
 
     }

@@ -16,5 +16,6 @@
 
     <string name="alerta_excluir">Deseja excluir esta Moeda ?</string>
     <string name="alerta_existente">Código já existente, carregar os dados para edição?</string>
+    <string name="alerta_codigo">Código obrigatorio</string>
 
 </resources>
