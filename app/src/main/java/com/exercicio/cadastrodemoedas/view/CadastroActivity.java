@@ -51,25 +51,19 @@ public class CadastroActivity extends AppCompatActivity {
         //recebe dados para edicao
         moeda = (Moeda) getIntent().getSerializableExtra(CADASTRO_CODE);
         if (moeda!=null) {
-            try {
-                codigo_et.setText(String.valueOf(moeda.getCodigo()));
-                desc_et.setText(moeda.getDescricao());
-                abrev_et.setText(moeda.getAbreviatura());
-                cot_et.setText(String.valueOf(moeda.getCotacao()));
-                codigo_et.setEnabled(false);
-            }catch (Exception e) {
-                e.printStackTrace();
-            }
+
+            inserirDados(moeda);
+
         }
     }
 
     //salva ou atualiza a moeda
     private void salvarUpdate(int codigo) {
 
-        for (Moeda moeda : listarTudo) {
+        for (Moeda moeda : listarTudo) {//busca por codigo ja inseridos
             if (moeda.getCodigo() == codigo && this.moeda == null) {
                 editarDados(moeda);
-                return; // achou o item, pode sair do método
+                return; // achou a moeda, pode sair do método
             }
         }
 
@@ -82,27 +76,6 @@ public class CadastroActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
         }
 
-    }
-
-    private void editarDados(Moeda moeda){
-
-        AlertDialog.Builder dialogInterno = new AlertDialog.Builder(CadastroActivity.this);
-        dialogInterno.setMessage(R.string.alerta_existente);
-
-        dialogInterno.setPositiveButton(R.string.sim, (dialog, which) -> {
-
-            codigo_et.setText(String.valueOf(moeda.getCodigo()));
-            desc_et.setText(moeda.getDescricao());
-            abrev_et.setText(moeda.getAbreviatura());
-            cot_et.setText(String.valueOf(moeda.getCotacao()));
-            codigo_et.setEnabled(false);
-            menu.getItem(0).setVisible(true);
-            this.moeda = moeda;
-        });
-
-        dialogInterno.setNegativeButton(R.string.nao, null);
-        dialogInterno.create();
-        dialogInterno.show();
     }
 
     //exibe confirmacao para deletar moeda
@@ -128,6 +101,38 @@ public class CadastroActivity extends AppCompatActivity {
 
     }
 
+    private void editarDados(Moeda moeda){
+
+        AlertDialog.Builder dialogInterno = new AlertDialog.Builder(CadastroActivity.this);
+        dialogInterno.setMessage(R.string.alerta_existente);
+
+        dialogInterno.setPositiveButton(R.string.sim, (dialog, which) -> {
+
+            inserirDados(moeda);
+            this.moeda = moeda;
+        });
+
+        dialogInterno.setNegativeButton(R.string.nao, null);
+        dialogInterno.create();
+        dialogInterno.show();
+    }
+
+    private void inserirDados(Moeda moeda) {
+
+        try {
+
+            codigo_et.setText(String.valueOf(moeda.getCodigo()));
+            desc_et.setText(moeda.getDescricao());
+            abrev_et.setText(moeda.getAbreviatura());
+            cot_et.setText(String.valueOf(moeda.getCotacao()));
+            codigo_et.setEnabled(false);
+            menu.getItem(0).setVisible(true);
+
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
     //verifica se o usuario deixou o campo da cotacao vazio
     private float verifiCotacaoNull() {
         float valor;
