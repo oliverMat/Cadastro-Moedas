@@ -16,16 +16,7 @@
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
             android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme">
-
-            <ImageView
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:paddingLeft="-65dp"
-                app:srcCompat="@drawable/logo" />
-
-
-        </androidx.appcompat.widget.Toolbar>
+            android:theme="?attr/actionBarTheme"/>
 
         <LinearLayout
             android:layout_width="match_parent"
